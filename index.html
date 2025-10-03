@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>MIX: A Multi-view Time-Frequency Interactive Explanation Framework</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">MIX: A Multi-view Time-Frequency Interactive Explanation Framework for Time Series Classification</h1>
+            <p class="text-lg text-gray-600 mt-4">NeurIPS 2025</p>
+        </header>
+
+        <!-- Authors Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-center mb-6">Authors</h2>
+            <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-center">
+                <p class="font-medium">Viet-Hung Tran</p>
+                <p class="font-medium">Zichi Zhang</p>
+                <p class="font-medium">Ngoc Phu Doan</p>
+                <p class="font-medium">Tuan Dung Pham</p>
+                <p class="font-medium">Phi Hung Nguyen</p>
+                <p class="font-medium">Xuan Hoang Nguyen</p>
+                <p class="font-medium">Hans Vandierendonck</p>
+                <p class="font-medium">Ira Assent</p>
+                <p class="font-medium">Son T. Mai</p>
+            </div>
+             <div class="text-center mt-4">
+                <p class="text-gray-600">Queen's University Belfast, Institut Polytechnique de Paris, Aarhus University</p>
+            </div>
+        </section>
+
+        <!-- Abstract Section -->
+        <section class="mb-12 max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-6">Abstract</h2>
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <p class="text-lg leading-relaxed">
+                    Deep learning models for time series classification (TSC) have achieved impressive performance, but explaining their decisions remains a significant challenge. Existing post-hoc explanation methods typically operate solely in the time domain and from a single-view perspective, limiting both faithfulness and robustness. In this work, we propose MIX (Multi-view Time-Frequency Interactive Explanation Framework), a novel framework that helps to explain deep learning models in a multi-view setting by leveraging multi-resolution, time-frequency views constructed using the Haar Discrete Wavelet Transform (DWT). MIX introduces an interactive cross-view refinement scheme, where explanation's information from one view is propagated across views to enhance overall interpretability. To align with user-preferred perspectives, we propose a greedy selection strategy that traverses the multi-view space to identify the most informative features. Additionally, we present OSIGV, a user-aligned segment-level attribution mechanism based on overlapping windows for each view, and introduce keystone-first IG, a method that refines explanations in each view using additional information from another view. Extensive experiments across multiple TSC benchmarks and model architectures demonstrate that MIX significantly outperforms state-of-the-art (SOTA) methods in terms of explanation faithfulness and robustness.
+                </p>
+            </div>
+        </section>
+
+        Algorithm Overview Section
+
+        <!-- Footer -->
+        <footer class="text-center mt-12">
+            <p class="text-gray-600">Contact: h.tran@qub.ac.uk</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+
