@@ -2,60 +2,118 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale-1.0">
-    <title>MIX: A Multi-view Time-Frequency Interactive Explanation Framework</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Erasing vs. Model Inversion: A Promising Defense or a False Hope?</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+        }
+        h1, h2, h3 {
+            line-height: 1.3;
+        }
+        strong {
+            font-weight: 600;
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 max-w-5xl">
         <!-- Header Section -->
-        <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">MIX: A Multi-view Time-Frequency Interactive Explanation Framework for Time Series Classification</h1>
-            <p class="text-lg text-gray-600 mt-4">NeurIPS 2025</p>
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900">MIX: A Multi-view Time-Frequency Interactive Explanation Framework for Time Series Classification</h1>
+            <p class="text-md text-gray-600 mt-4">TMLR 08/2025</p>
         </header>
 
         <!-- Authors Section -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-semibold text-center mb-6">Authors</h2>
-            <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-center">
-                <p class="font-medium">Viet-Hung Tran</p>
-                <p class="font-medium">Zichi Zhang</p>
-                <p class="font-medium">Ngoc Phu Doan</p>
-                <p class="font-medium">Tuan Dung Pham</p>
-                <p class="font-medium">Phi Hung Nguyen</p>
-                <p class="font-medium">Xuan Hoang Nguyen</p>
-                <p class="font-medium">Hans Vandierendonck</p>
-                <p class="font-medium">Ira Assent</p>
-                <p class="font-medium">Son T. Mai</p>
+        <section class="text-center mb-10">
+            <div class="text-lg">
+                <p>Viet-Hung Tran<sup>(*1,2)</sup> | Ngoc-Bao Nguyen<sup>(*1)</sup></p>
+                <p class="mt-2">Son T. Mai<sup>(2)</sup> | Hans Vandierendonck<sup>(2)</sup> | Ira Assent<sup>(3)</sup> | Alex Kot<sup>(4)</sup> | Ngai-Man Cheung<sup>(1†)</sup></p>
             </div>
-             <div class="text-center mt-4">
-                <p class="text-gray-600">Queen's University Belfast, Institut Polytechnique de Paris, Aarhus University</p>
+            <div class="text-md text-gray-600 mt-4">
+                <p><sup>(1)</sup>Singapore University of Technology and Design (SUTD) | <sup>(2)</sup>Queen's University Belfast</p>
+                <p><sup>(3)</sup>Aarhus University | <sup>(4)</sup>Nanyang Technological University (NTU)</p>
+            </div>
+            <div class="text-sm text-gray-500 mt-4">
+                <p><sup>(*)</sup> The first two authors contributed equally | <sup>(†)</sup> Corresponding author</p>
+            </div>
+        </section>
+        
+        <!-- Links Section -->
+        <section class="text-center mb-12">
+            <div class="flex justify-center gap-x-6">
+                <a href="#" class="text-lg font-medium text-blue-600 hover:underline">Paper</a>
+                <a href="#" class="text-lg font-medium text-blue-600 hover:underline">Github</a>
+                <a href="#" class="text-lg font-medium text-blue-600 hover:underline">Models</a>
             </div>
         </section>
 
+
         <!-- Abstract Section -->
-        <section class="mb-12 max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-6">Abstract</h2>
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-center mb-6">Abstract</h2>
             <div class="bg-white p-8 rounded-lg shadow-md">
-                <p class="text-lg leading-relaxed">
-                    Deep learning models for time series classification (TSC) have achieved impressive performance, but explaining their decisions remains a significant challenge. Existing post-hoc explanation methods typically operate solely in the time domain and from a single-view perspective, limiting both faithfulness and robustness. In this work, we propose MIX (Multi-view Time-Frequency Interactive Explanation Framework), a novel framework that helps to explain deep learning models in a multi-view setting by leveraging multi-resolution, time-frequency views constructed using the Haar Discrete Wavelet Transform (DWT). MIX introduces an interactive cross-view refinement scheme, where explanation's information from one view is propagated across views to enhance overall interpretability. To align with user-preferred perspectives, we propose a greedy selection strategy that traverses the multi-view space to identify the most informative features. Additionally, we present OSIGV, a user-aligned segment-level attribution mechanism based on overlapping windows for each view, and introduce keystone-first IG, a method that refines explanations in each view using additional information from another view. Extensive experiments across multiple TSC benchmarks and model architectures demonstrate that MIX significantly outperforms state-of-the-art (SOTA) methods in terms of explanation faithfulness and robustness.
+                <p>
+                    Model Inversion (MI) attacks pose a significant privacy threat by reconstructing private training data from machine learning models. While existing defenses primarily concentrate on model-centric approaches, the impact of data on MI robustness remains largely unexplored.
+                </p>
+                <p class="mt-4">
+                    In this work, we explore <strong>Random Erasing (RE)</strong>—a technique traditionally used for improving model generalization under occlusion—and uncover its surprising effectiveness as a defense against MI attacks. Specifically, our novel feature space analysis shows that models trained with RE-images introduce a significant discrepancy between the features of MI-reconstructed images and those of the private data. At the same time, features of private images remain distinct from other classes and well-separated from different classification regions. These effects collectively degrade MI reconstruction quality and attack accuracy while maintaining reasonable natural accuracy. Furthermore, we explore two critical properties of RE including <strong>Partial Erasure</strong> and <strong>Random Location</strong>. <strong>Partial Erasure</strong> prevents the model from observing entire objects during training. We find this has a significant impact on MI, which aims to reconstruct the entire objects. <strong>Random Location</strong> of erasure plays a crucial role in achieving a strong privacy-utility trade-off. Our findings highlight RE as a simple yet effective defense mechanism that can be easily integrated with existing privacy-preserving techniques. Extensive experiments across 37 setups demonstrate that our method achieves state-of-the-art (SOTA) performance in the privacy-utility trade-off. The results consistently demonstrate the superiority of our defense over existing methods across different MI attacks, network architectures, and attack configurations. For the first time, we achieve a significant degradation in attack accuracy <em>without</em> a decrease in utility for some configurations.
                 </p>
             </div>
         </section>
 
-        Algorithm Overview Section
+        <!-- Figures Section -->
+        <section class="mb-12">
+            <!-- Figure 1 -->
+            <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                 <div class="flex justify-center mb-4">
+                    <img src="https://placehold.co/800x400/e2e8f0/64748b?text=Figure+1:+MI+Defense+via+Random+Erasing+(MIDRE)" alt="Diagram of the MIDRE defense mechanism" class="rounded-md w-full max-w-3xl">
+                 </div>
+                <p class="text-center text-gray-700 italic">
+                    <strong>Figure 1: Our Proposed Model Inversion (MI) Defense via Random Erasing (MIDRE).</strong> (a) “No Defense”: Training a model without MI defense. 𝓛(θ) is the standard training loss, e.g., cross-entropy. Training a model with state-of-the-art MI defenses (SOTA): (b) BiDO, (c) NLS, (d) TL-DMI, (e) MI-RAD, and (f) Our method. Studies in prior works focus on <strong>adding new loss</strong> to the training objective or on <strong>the model's parameters</strong> to defend against MI. For our proposed method (f), the training procedure and objective are the same as in (a) “No Defense.” However, the training samples presented to the model are partially masked, thus reducing the private training sample's information encoded in the model and <strong>preventing the model from observing the entire images</strong>. Therefore, <strong>MIDRE is different from other approaches and focuses on input data only to defend.</strong> We find that this can significantly degrade MI attacks, which require a substantial amount of private training data information encoded inside the model in order to reconstruct high-dimensional private images.
+                </p>
+            </div>
 
-        <!-- Footer -->
-        <footer class="text-center mt-12">
-            <p class="text-gray-600">Contact: h.tran@qub.ac.uk</p>
-        </footer>
+            <!-- Figure 2 -->
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                 <div class="flex justify-center mb-4">
+                     <img src="https://placehold.co/800x400/e2e8f0/64748b?text=Figure+2:+Feature+Space+Analysis" alt="Diagram of the feature space analysis" class="rounded-md w-full max-w-3xl">
+                 </div>
+                <p class="text-center text-gray-700 italic">
+                    <strong>Figure 2: Feature space analysis to show that, under MIDRE, <em>f<sub>recon</sub><sup>MIDRE</sup></em> and <em>f<sub>priv</sub><sup>MIDRE</sup></em> have a discrepancy, degrading MI attack.</strong> We visualize penultimate layer activations of private images (★ <em>f<sub>priv</sub></em>), RE-private images (▼ <em>f<sub>RE</sub></em>), and MI-reconstructed images (× <em>f<sub>recon</sub></em>) generated by both (a) NoDef and (b) our MIDRE model. We also visualize the convex hull for private images, RE-private images, and MI-reconstructed images. In (a), <em>f<sub>recon</sub><sup>NoDef</sup></em> closely resembles <em>f<sub>priv</sub><sup>NoDef</sup></em>, consistent with high attack accuracy. In (b), private images and RE-private images share some similarity but they are not identical, with partial overlap between <em>f<sub>priv</sub><sup>MIDRE</sup></em> and <em>f<sub>RE</sub><sup>MIDRE</sup></em>. Importantly, <em>f<sub>recon</sub><sup>MIDRE</sup></em> closely resembles <em>f<sub>RE</sub><sup>MIDRE</sup></em> as RE-private is the training data for MIDRE. This results in <strong>a reduced overlap between <em>f<sub>recon</sub><sup>MIDRE</sup></em> and <em>f<sub>priv</sub><sup>MIDRE</sup></em>, explaining that MI does not accurately capture the private image features under MIDRE.</strong> More visualization can be found in Supp.
+                </p>
+            </div>
+        </section>
+
+        <!-- Citation -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-center mb-6">Citation</h2>
+            <div class="bg-gray-900 text-gray-200 p-6 rounded-lg shadow-md font-mono text-sm overflow-x-auto">
+                <pre><code>@article{
+    tran2025random,
+    title={Random Erasing vs. Model Inversion: A Promising Defense or a False Hope?},
+    author={Viet-Hung Tran and Ngoc-Bao Nguyen and Son T. Mai and Hans Vandierendonck and Ira Assent and Alex Kot and Ngai-Man Cheung},
+    journal={Transactions on Machine Learning Research},
+    issn={2835-8856},
+    year={2025},
+    url={https://openreview.net/forum?id=S9CwKnPHaO},
+    note={Featured Certification}
+}</code></pre>
+            </div>
+        </section>
+        
+        <!-- Acknowledgements -->
+        <section>
+             <h2 class="text-2xl font-bold text-center mb-6">Acknowledgements</h2>
+             <div class="bg-white p-8 rounded-lg shadow-md text-gray-600 text-sm">
+                <p>This research is supported by the National Research Foundation, Singapore under its AI Singapore Programmes (AISG Award No.: AISG2-TC-2022-007); The Agency for Science, Technology and Research (A*STAR) under its MTC Programmatic Funds (Grant No. M23L7b0021). This research is supported by the National Research Foundation, Singapore and Infocomm Media Development Authority under its Trust Tech Funding Initiative. Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not reflect the views of National Research Foundation, Singapore and Infocomm Media Development Authority. This research is also part-funded by the European Union (Horizon Europe 2021-2027 Framework Programme Grant Agreement number 10107245. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union. The European Union cannot be held responsible for them) and by the Engineering and Physical Sciences Research Council under grant number EP/X029174/1.</p>
+             </div>
+        </section>
+
     </div>
 
 </body>
