@@ -71,10 +71,22 @@
             <!-- Figure 1 -->
             <div class="bg-white p-8 rounded-lg shadow-md mb-8">
                  <div class="flex justify-center mb-4">
-                    <img src="https://placehold.co/800x400/e2e8f0/64748b?text=Figure+1:+MI+Defense+via+Random+Erasing+(MIDRE)" alt="Diagram of the MIDRE defense mechanism" class="rounded-md w-full max-w-3xl">
+                    <img src="https://github.com/hung-z/MIX/blob/main/fig_pipeline_new.png" alt="Diagram of the MIX Framework" class="rounded-md w-full max-w-3xl">
                  </div>
                 <p class="text-center text-gray-700 italic">
-                    <strong>Figure 1: Our Proposed Model Inversion (MI) Defense via Random Erasing (MIDRE).</strong> (a) “No Defense”: Training a model without MI defense. 𝓛(θ) is the standard training loss, e.g., cross-entropy. Training a model with state-of-the-art MI defenses (SOTA): (b) BiDO, (c) NLS, (d) TL-DMI, (e) MI-RAD, and (f) Our method. Studies in prior works focus on <strong>adding new loss</strong> to the training objective or on <strong>the model's parameters</strong> to defend against MI. For our proposed method (f), the training procedure and objective are the same as in (a) “No Defense.” However, the training samples presented to the model are partially masked, thus reducing the private training sample's information encoded in the model and <strong>preventing the model from observing the entire images</strong>. Therefore, <strong>MIDRE is different from other approaches and focuses on input data only to defend.</strong> We find that this can significantly degrade MI attacks, which require a substantial amount of private training data information encoded inside the model in order to reconstruct high-dimensional private images.
+                   <p>Overview of the MIX framework with three phases.</p>
+
+                    <p><strong>(A)</strong> <em>Multi-view Construction and Independent Explanation</em> described in Section~subset:Overview_Algorithm: views V<sub>r</sub> are constructed via Haar DWT, then explained independently using IGV and OSIGV.</p>
+
+                    <p><strong>(B)</strong> <em>Cross-view Refinement</em> described in Section~subset:Overview_Algorithm: the best view V<sub>q</sub> is selected using KAUCS̃<sub>top</sub>, then refined using KIGV and OSIGV guided by top-h segments.</p>
+
+                    <p><strong>(C)</strong> <em>Multi-view Greedy Selection</em> described in Section~subset:Overview_Algorithm: MIX traverses all views to select key features and maps them to the user-preferred view. Phase 3 is practical for selecting top features directly.</p>
+
+                    <p><strong>(D)</strong> Attribution mechanism in Phase 1: IGV is applied to each view, and scores are aggregated into overlapping segments via OSIGV (see Section~subsect:attribution_MIX).</p>
+
+                    <p><strong>(E)</strong> Attribution mechanism in Phase 2: Keystone-first IG for view (KIGV) is used to prioritize keystone features before generate importance score to others (see Section~subsect:attribution_MIX), then apply OSIGV again to overlapping segments.</p>
+
+                    <!-- <p>Refer Section sec:app:table_of_symbols and Table tab:notation for meaning of symbols.</p> -->
                 </p>
             </div>
 
