@@ -17,113 +17,98 @@
         strong {
             font-weight: 600;
         }
+        /* For better readability of long text blocks */
+        p, li {
+            text-align: justify;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 max-w-5xl">
-        <!-- Header Section -->
-        <header class="text-center mb-10">
-            <h1 class="text-3xl md:text-4xl font-bold text-gray-900">MIX: A Multi-view Time-Frequency Interactive Explanation Framework for Time Series Classification</h1>
-            <p class="text-md text-gray-600 mt-4">NeurIPS 2025</p>
-        </header>
+        <main class="space-y-12">
+            
+            <header class="text-center space-y-8">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900">MIX: A Multi-view Time-Frequency Interactive Explanation Framework for Time Series Classification</h1>
+                    <p class="text-md text-gray-600 mt-3">NeurIPS 2025</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-lg">
+                        <p>Viet-Hung Tran<sup>(*,1)</sup>, Ngoc Phu Doan<sup>(*,1)</sup>, Zichi Zhang<sup>(*,1)</sup></p>
+                        <p>Tuan Dung Pham<sup>(1)</sup>, Phi Hung Nguyen<sup>(1)</sup>, Xuan Hoang Nguyen<sup>(2)</sup>, Hans Vandierendonck<sup>(1)</sup>, Ira Assent<sup>(3)</sup>, Thai Son Mai<sup>(1)</sup></p>
+                    </div>
+                    <div class="text-md text-gray-600">
+                        <p>
+                            <sup>(1)</sup> Queen's University Belfast &nbsp;&bull;&nbsp;
+                            <sup>(2)</sup> Institut Polytechnique de Paris &nbsp;&bull;&nbsp;
+                            <sup>(3)</sup> Aarhus University
+                        </p>
+                    </div>
+                    <div class="text-sm text-gray-500 italic">
+                        <p><sup>(*)</sup> The first three authors contributed equally</p>
+                    </div>
+                </div>
+            </header>
 
-        <!-- Authors Section -->
-        <section class="text-center mb-10">
-            <div class="text-lg">
-                <p>Viet-Hung Tran<sup>(*1)</sup> | Ngoc Phu Doan<sup>(*1)</sup> | Zichi Zhang<sup>(*1)</sup></p>
-                <p class="mt-2">Tuan Dung Pham<sup>(1)</sup> | Phi Hung Nguyen<sup>(1)</sup> | Xuan Hoang Nguyen<sup>(2)</sup> | Hans Vandierendonck<sup>(1)</sup> | Ira Assent<sup>(3)</sup>|  Thai Son Mai<sup>(1)</sup></p>
-            </div>
-            <div class="text-md text-gray-600 mt-4">
-                <p><sup>(1)</sup> Queen's University Belfast | <sup>(2)</sup> Institut Polytechnique de Paris</p>
-                <p><sup>(3)</sup>Aarhus University </p>
-            </div>
-            <div class="text-sm text-gray-500 mt-4">
-                <p><sup>(*)</sup> The first three authors contributed equally</p>
-            </div>
-        </section>
-        
-        <!-- Links Section -->
-        <section class="text-center mb-12">
-            <div class="flex justify-center gap-x-6">
+            <section class="flex justify-center gap-x-6">
                 <a href="https://openreview.net/pdf?id=XDtwXau0BX" class="text-lg font-medium text-blue-600 hover:underline">Paper</a>
                 <a href="#" class="text-lg font-medium text-blue-600 hover:underline">Github</a>
                 <a href="#" class="text-lg font-medium text-blue-600 hover:underline">Models</a>
-            </div>
-        </section>
+            </section>
 
+            <section>
+                <h2 class="text-2xl font-bold text-center mb-6">Abstract</h2>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <p>
+                        Deep learning models for time series classification (TSC) have achieved impressive performance, but explaining their decisions remains a significant challenge. Existing post-hoc explanation methods typically operate solely in the time domain and from a single-view perspective, limiting both faithfulness and robustness. In this work, we propose MIX (Multi-view Time-Frequency Interactive EXplanation Framework), a novel framework that helps to explain deep learning models in a multi-view setting by leveraging multi-resolution, time-frequency views constructed using the Haar Discrete Wavelet Transform (DWT). MIX introduces an <em>interactive</em> cross-view refinement scheme, where explanation's information from one view is propagated across views to enhance overall interpretability. To align with user-preferred perspectives, we propose a greedy selection strategy that traverses the multi-view space to identify the most informative features. Additionally, we present OSIGV, a user-aligned segment-level attribution mechanism based on overlapping windows for each view, and introduce keystone-first IG, a method that refines explanations in each view using additional information from another view. Extensive experiments across multiple TSC benchmarks and model architectures demonstrate that MIX significantly outperforms state-of-the-art (SOTA) methods in terms of explanation faithfulness and robustness.
+                    </p>
+                </div>
+            </section>
 
-        <!-- Abstract Section -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold text-center mb-6">Abstract</h2>
-            <div class="bg-white p-8 rounded-lg shadow-md">
-                <!-- <p> -->
-                    <!-- MIX: A Multi-view Time-Frequency Interactive Explanation Framework for Time Series Classification -->
-                <!-- </p> -->
-                <p class="mt-4">
-                   Deep learning models for time series classification (TSC) have achieved impressive performance, but explaining their decisions remains a significant challenge. Existing post-hoc explanation methods typically operate solely in the time domain and from a single-view perspective, limiting both faithfulness and robustness. In this work, we propose MIX (Multi-view Time-Frequency Interactive EXplanation Framework), a novel framework that helps to explain deep learning models in a multi-view setting by leveraging multi-resolution, time-frequency views constructed using the Haar Discrete Wavelet Transform (DWT). MIX introduces an <em>interactive</em> cross-view refinement scheme, where explanation's information from one view is propagated across views to enhance overall interpretability. To align with user-preferred perspectives, we propose a greedy selection strategy that traverses the multi-view space to identify the most informative features. Additionally, we present OSIGV, a user-aligned segment-level attribution mechanism based on overlapping windows for each view, and introduce keystone-first IG, a method that refines explanations in each view using additional information from another view. Extensive experiments across multiple TSC benchmarks and model architectures demonstrate that MIX significantly outperforms state-of-the-art (SOTA) methods in terms of explanation faithfulness and robustness.
-                </p>
-            </div>
-        </section>
+            <section class="space-y-8">
+                <figure class="bg-white p-8 rounded-lg shadow-md">
+                    <img src="https://hung-z.github.io/MIX/fig_pipeline_new.png" alt="Diagram of the MIX Framework" class="rounded-md w-full max-w-3xl mx-auto">
+                    <figcaption class="mt-6 text-gray-700 text-sm">
+                        <p class="font-semibold mb-4 text-center">Overview of the MIX framework with three phases.</p>
+                        <ul class="space-y-2 list-disc list-inside md:px-4">
+                            <li><strong>(A) Multi-view Construction and Independent Explanation:</strong> Described in Section~subset:Overview_Algorithm, views V<sub>r</sub> are constructed via Haar DWT, then explained independently using IGV and OSIGV.</li>
+                            <li><strong>(B) Cross-view Refinement:</strong> Described in Section~subset:Overview_Algorithm, the best view V<sub>q</sub> is selected using KAUCS̃<sub>top</sub>, then refined using KIGV and OSIGV guided by top-h segments.</li>
+                            <li><strong>(C) Multi-view Greedy Selection:</strong> Described in Section~subset:Overview_Algorithm, MIX traverses all views to select key features and maps them to the user-preferred view. Phase 3 is practical for selecting top features directly.</li>
+                            <li><strong>(D) Attribution mechanism in Phase 1:</strong> IGV is applied to each view, and scores are aggregated into overlapping segments via OSIGV (see Section~subsect:attribution_MIX).</li>
+                            <li><strong>(E) Attribution mechanism in Phase 2:</strong> Keystone-first IG for view (KIGV) is used to prioritize keystone features before generating importance scores for others, then OSIGV is applied again to overlapping segments (see Section~subsect:attribution_MIX).</li>
+                        </ul>
+                    </figcaption>
+                </figure>
 
-        <!-- Figures Section -->
-        <section class="mb-12">
-            <!-- Figure 1 -->
-            <div class="bg-white p-8 rounded-lg shadow-md mb-8">
-                 <div class="flex justify-center mb-4">
-                    <img src="https://hung-z.github.io/MIX/fig_pipeline_new.png" alt="Diagram of the MIX Framework" class="rounded-md w-full max-w-3xl">
-                 </div>
-                <p class="text-center text-gray-700 italic">
-                   <strong>Overview of the MIX framework with three phases.</strong>.
+                <figure class="bg-white p-8 rounded-lg shadow-md">
+                    <img src="https://hung-z.github.io/MIX/MITBIH.png" alt="Diagram of the feature space analysis" class="rounded-md w-full max-w-3xl mx-auto">
+                    <figcaption class="mt-6 text-center text-gray-700 text-sm italic">
+                        MIX explanations on the synthetic dataset (A, B) and MIT-BIH (C, D), without (A, C) and with (B, D) Phase 3. Labels use the format cA<sup>segment id</sup><sub>level</sub>. Phase 3 enhances interpretability by highlighting key features of time series and relevant granularity.
+                    </figcaption>
+                </figure>
+            </section>
 
-                    <strong>(A)</strong>: <em>Multi-view Construction and Independent Explanation</em> described in Section~subset:Overview_Algorithm: views V<sub>r</sub> are constructed via Haar DWT, then explained independently using IGV and OSIGV.
-
-                    <strong>(B)</strong>: <em>Cross-view Refinement</em> described in Section~subset:Overview_Algorithm: the best view V<sub>q</sub> is selected using KAUCS̃<sub>top</sub>, then refined using KIGV and OSIGV guided by top-h segments.
-
-                    <strong>(C)</strong>: <em>Multi-view Greedy Selection</em> described in Section~subset:Overview_Algorithm: MIX traverses all views to select key features and maps them to the user-preferred view. Phase 3 is practical for selecting top features directly.
-
-                    <strong>(D)</strong>: Attribution mechanism in Phase 1: IGV is applied to each view, and scores are aggregated into overlapping segments via OSIGV (see Section~subsect:attribution_MIX).
-
-                    <strong>(E)</strong>: Attribution mechanism in Phase 2: Keystone-first IG for view (KIGV) is used to prioritize keystone features before generate importance score to others (see Section~subsect:attribution_MIX), then apply OSIGV again to overlapping segments.
-
-                    <!-- <p>Refer Section sec:app:table_of_symbols and Table tab:notation for meaning of symbols.</p> -->
-                </p>
-            </div>
-
-            <!-- Figure 2 -->
-            <div class="bg-white p-8 rounded-lg shadow-md">
-                 <div class="flex justify-center mb-4">
-                     <img src="https://hung-z.github.io/MIX/MITBIH.png" alt="Diagram of the feature space analysis" class="rounded-md w-full max-w-3xl">
-                 </div>
-                <p class="text-center text-gray-700 italic">
-                    <p>MIX explanations on the synthetic dataset (A, B) and MIT-BIH (C, D), without (A, C) and with (B, D) Phase 3. Labels use the format cA<sup>segment id</sup><sub>level</sub>. Phase 3 enhances interpretability by highlighting key features of time series and relevant granularity.</p>
-                </p>
-            </div>
-        </section>
-
-        <!-- Citation -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold text-center mb-6">Citation</h2>
-            <div class="bg-gray-900 text-gray-200 p-6 rounded-lg shadow-md font-mono text-sm overflow-x-auto">
-                <pre><code>@article{
-title={MIX: A Multi-view Time-Frequency Interactive Explanation Framework for Time Series Classification},
+            <section>
+                <h2 class="text-2xl font-bold text-center mb-6">Citation</h2>
+                <div class="bg-gray-900 text-gray-200 p-6 rounded-lg shadow-md font-mono text-sm overflow-x-auto">
+                    <pre><code>@article{
+    title={MIX: A Multi-view Time-Frequency Interactive Explanation Framework for Time Series Classification},
 }</code></pre>
-            </div>
-        </section>
-        
-        <!-- Acknowledgements -->
-        <section>
-             <h2 class="text-2xl font-bold text-center mb-6">Acknowledgements</h2>
-             <div class="bg-white p-8 rounded-lg shadow-md text-gray-600 text-sm">
-                <p>
-                    We special thank Hoang Anh Dau, Anthony Bagnall, Kaveh Kamgar, Chin-Chia Michael Yeh, Yan Zhu, Shaghayegh Gharghabi, Chotirat Ann Ratanamahatana, Eamonn Keogh and others for producing and maintaining the UCR and UAE time series archive, which we use in our work. We thank anonymous reviewers for their valuable comments. This research is part-funded by the European Union (Horizon Europe 2021-2027 Framework Programme Grant Agreement number 10107245. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union. The European Union cannot be held responsible for them) and by the Engineering and Physical Sciences Research Council under grant number EP/X029174/1.
+                </div>
+            </section>
+            
+            <section>
+                 <h2 class="text-2xl font-bold text-center mb-6">Acknowledgements</h2>
+                 <div class="bg-white p-8 rounded-lg shadow-md text-gray-600 text-sm">
+                     <p>
+                         We extend special thanks to Hoang Anh Dau, Anthony Bagnall, Kaveh Kamgar, Chin-Chia Michael Yeh, Yan Zhu, Shaghayegh Gharghabi, Chotirat Ann Ratanamahatana, Eamonn Keogh, and others for producing and maintaining the UCR and UAE time series archive, which we use in our work. We thank the anonymous reviewers for their valuable comments. This research is part-funded by the European Union (Horizon Europe 2021-2027 Framework Programme Grant Agreement number 10107245. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union. The European Union cannot be held responsible for them) and by the Engineering and Physical Sciences Research Council under grant number EP/X029174/1.
+                     </p>
+                 </div>
+            </section>
 
-                </p>
-             </div>
-        </section>
-
+        </main>
     </div>
 
 </body>
 </html>
-
