@@ -76,15 +76,15 @@
                 <p class="text-center text-gray-700 italic">
                    <p>Overview of the MIX framework with three phases.</p>
 
-                    <p><strong>(A)</strong> <em>Multi-view Construction and Independent Explanation</em> described in Section~subset:Overview_Algorithm: views V<sub>r</sub> are constructed via Haar DWT, then explained independently using IGV and OSIGV.</p>
+                    <strong>(A)</strong>: <em>Multi-view Construction and Independent Explanation</em> described in Section~subset:Overview_Algorithm: views V<sub>r</sub> are constructed via Haar DWT, then explained independently using IGV and OSIGV.
 
-                    <p><strong>(B)</strong> <em>Cross-view Refinement</em> described in Section~subset:Overview_Algorithm: the best view V<sub>q</sub> is selected using KAUCS̃<sub>top</sub>, then refined using KIGV and OSIGV guided by top-h segments.</p>
+                    <strong>(B)</strong>: <em>Cross-view Refinement</em> described in Section~subset:Overview_Algorithm: the best view V<sub>q</sub> is selected using KAUCS̃<sub>top</sub>, then refined using KIGV and OSIGV guided by top-h segments.
 
-                    <p><strong>(C)</strong> <em>Multi-view Greedy Selection</em> described in Section~subset:Overview_Algorithm: MIX traverses all views to select key features and maps them to the user-preferred view. Phase 3 is practical for selecting top features directly.</p>
+                    <strong>(C)</strong>: <em>Multi-view Greedy Selection</em> described in Section~subset:Overview_Algorithm: MIX traverses all views to select key features and maps them to the user-preferred view. Phase 3 is practical for selecting top features directly.
 
-                    <p><strong>(D)</strong> Attribution mechanism in Phase 1: IGV is applied to each view, and scores are aggregated into overlapping segments via OSIGV (see Section~subsect:attribution_MIX).</p>
+                    <strong>(D)</strong>: Attribution mechanism in Phase 1: IGV is applied to each view, and scores are aggregated into overlapping segments via OSIGV (see Section~subsect:attribution_MIX).
 
-                    <p><strong>(E)</strong> Attribution mechanism in Phase 2: Keystone-first IG for view (KIGV) is used to prioritize keystone features before generate importance score to others (see Section~subsect:attribution_MIX), then apply OSIGV again to overlapping segments.</p>
+                    <strong>(E)</strong>: Attribution mechanism in Phase 2: Keystone-first IG for view (KIGV) is used to prioritize keystone features before generate importance score to others (see Section~subsect:attribution_MIX), then apply OSIGV again to overlapping segments.
 
                     <!-- <p>Refer Section sec:app:table_of_symbols and Table tab:notation for meaning of symbols.</p> -->
                 </p>
