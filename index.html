@@ -31,15 +31,15 @@
         <!-- Authors Section -->
         <section class="text-center mb-10">
             <div class="text-lg">
-                <p>Viet-Hung Tran<sup>(*1,2)</sup> | Ngoc-Bao Nguyen<sup>(*1)</sup></p>
-                <p class="mt-2">Son T. Mai<sup>(2)</sup> | Hans Vandierendonck<sup>(2)</sup> | Ira Assent<sup>(3)</sup> | Alex Kot<sup>(4)</sup> | Ngai-Man Cheung<sup>(1†)</sup></p>
+                <p>Viet-Hung Tran<sup>(*1)</sup> | Ngoc Phu Doan<sup>(*1)</sup></p> | Zichi Zhang<sup>(*1)</sup></p>
+                <p class="mt-2">Tuan Dung Pham<sup>(1)</sup> | Phi Hung Nguyen<sup>(1)</sup> | Xuan Hoang Nguyen<sup>(2)</sup> | Hans Vandierendonck<sup>(1)</sup> | Ira Assent<sup>(3)</sup></p> |  Thai Son Mai<sup>(1)</sup></p>
             </div>
             <div class="text-md text-gray-600 mt-4">
-                <p><sup>(1)</sup>Singapore University of Technology and Design (SUTD) | <sup>(2)</sup>Queen's University Belfast</p>
-                <p><sup>(3)</sup>Aarhus University | <sup>(4)</sup>Nanyang Technological University (NTU)</p>
+                <p><sup>(1)</sup> Queen's University Belfast | <sup>(2)</sup> Institut Polytechnique de Paris</p>
+                <p><sup>(3)</sup>Aarhus University </p>
             </div>
             <div class="text-sm text-gray-500 mt-4">
-                <p><sup>(*)</sup> The first two authors contributed equally | <sup>(†)</sup> Corresponding author</p>
+                <p><sup>(*)</sup> The first three authors contributed equally</p>
             </div>
         </section>
         
@@ -61,7 +61,7 @@
                     Model Inversion (MI) attacks pose a significant privacy threat by reconstructing private training data from machine learning models. While existing defenses primarily concentrate on model-centric approaches, the impact of data on MI robustness remains largely unexplored.
                 </p>
                 <p class="mt-4">
-                    In this work, we explore <strong>Random Erasing (RE)</strong>—a technique traditionally used for improving model generalization under occlusion—and uncover its surprising effectiveness as a defense against MI attacks. Specifically, our novel feature space analysis shows that models trained with RE-images introduce a significant discrepancy between the features of MI-reconstructed images and those of the private data. At the same time, features of private images remain distinct from other classes and well-separated from different classification regions. These effects collectively degrade MI reconstruction quality and attack accuracy while maintaining reasonable natural accuracy. Furthermore, we explore two critical properties of RE including <strong>Partial Erasure</strong> and <strong>Random Location</strong>. <strong>Partial Erasure</strong> prevents the model from observing entire objects during training. We find this has a significant impact on MI, which aims to reconstruct the entire objects. <strong>Random Location</strong> of erasure plays a crucial role in achieving a strong privacy-utility trade-off. Our findings highlight RE as a simple yet effective defense mechanism that can be easily integrated with existing privacy-preserving techniques. Extensive experiments across 37 setups demonstrate that our method achieves state-of-the-art (SOTA) performance in the privacy-utility trade-off. The results consistently demonstrate the superiority of our defense over existing methods across different MI attacks, network architectures, and attack configurations. For the first time, we achieve a significant degradation in attack accuracy <em>without</em> a decrease in utility for some configurations.
+                   Deep learning models for time series classification (TSC) have achieved impressive performance, but explaining their decisions remains a significant challenge. Existing post-hoc explanation methods typically operate solely in the time domain and from a single-view perspective, limiting both faithfulness and robustness. In this work, we propose MIX (Multi-view Time-Frequency Interactive EXplanation Framework), a novel framework that helps to explain deep learning models in a multi-view setting by leveraging multi-resolution, time-frequency views constructed using the Haar Discrete Wavelet Transform (DWT). MIX introduces an <em>interactive</em> cross-view refinement scheme, where explanation's information from one view is propagated across views to enhance overall interpretability. To align with user-preferred perspectives, we propose a greedy selection strategy that traverses the multi-view space to identify the most informative features. Additionally, we present OSIGV, a user-aligned segment-level attribution mechanism based on overlapping windows for each view, and introduce keystone-first IG, a method that refines explanations in each view using additional information from another view. Extensive experiments across multiple TSC benchmarks and model architectures demonstrate that MIX significantly outperforms state-of-the-art (SOTA) methods in terms of explanation faithfulness and robustness.
                 </p>
             </div>
         </section>
