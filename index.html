@@ -328,21 +328,21 @@
 
 
 <!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
+<!-- <section class="hero teaser"> -->
+  <!-- <div class="container is-max-desktop"> -->
+    <!-- <div class="hero-body"> -->
       <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata"> -->
         <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
+        <!-- <source src="static/videos/banner_video.mp4" type="video/mp4"> -->
+      <!-- </video> -->
       <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
+      <!-- <h2 class="subtitle has-text-centered"> -->
+        <!-- Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus.  -->
+      <!-- </h2> -->
+    <!-- </div> -->
+  <!-- </div> -->
+<!-- </section> -->
 <!-- End teaser video -->
 
 <!-- Paper abstract -->
@@ -371,10 +371,20 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
+        <img src="https://hung-z.github.io/MIX/fig_pipeline_new.png" alt="Overview Framework" loading="lazy"/>
         <!-- TODO: Replace with description of this result -->
         <h2 class="subtitle has-text-centered">
-          First image description.
+          <p><strong>Overview of the MIX framework with three phases.</strong></p>
+          
+          <p><strong>(A)</strong>, <em>Multi-view Construction and Independent Explanation</em>: views V<sub>r</sub> are constructed via Haar DWT, then explained independently using IGV and OSIGV.</p>
+
+          <p><strong>(B)</strong>, <em>Cross-view Refinement</em>: the best view V<sub>q</sub> is selected using KAUCS̃<sub>top</sub>, then refined using KIGV and OSIGV guided by top-h segments.</p>
+
+          <p><strong>(C)</strong>, <em>Multi-view Greedy Selection</em>: MIX traverses all views to select key features and maps them to the user-preferred view. Phase 3 is practical for selecting top features directly.</p>
+
+          <p><strong>Description (D)</strong>, <em>Attribution mechanism in Phase 1</em>: IGV is applied to each view, and scores are aggregated into overlapping segments via OSIGV (see Section~subsect:attribution_MIX).</p>
+
+          <p><strong>Description (E)</strong>, <em>Attribution mechanism in Phase 2</em>: Keystone-first IG for view (KIGV) is used to prioritize keystone features before generate importance score to others, then apply OSIGV again to overlapping segments.</p>
         </h2>
       </div>
       <div class="item">
